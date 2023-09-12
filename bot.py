@@ -22,7 +22,7 @@ dp: Dispatcher = Dispatcher()
 
 # Добавляем задачу в планировщик
 def schedule_jobs():
-    scheduler.add_job(send_message_in_time, "interval", minutes=10, seconds=5)
+    scheduler.add_job(send_message_in_time, "interval", minutes=0, seconds=5)
     scheduler.add_job(send_message_to_planners_in_time, "interval", minutes=10, seconds=5)
 
 
@@ -61,6 +61,7 @@ async def main():
 
     # Пропускаем накопившиеся апдейты и запускаем polling
     await bot.delete_webhook(drop_pending_updates=True)
+    print("Bot polling")
     await dp.start_polling(bot)
 
 
