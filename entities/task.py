@@ -66,7 +66,7 @@ class Task:
         return self._number_of_persons
 
     @number_of_persons.setter
-    def number_of_persons (self, value):
+    def number_of_persons(self, value):
         if isinstance(value, int):
             self._number_of_persons = value
         else:
@@ -82,7 +82,3 @@ class Task:
             self._completed = completed
         else:
             raise ValueError
-
-
-
-

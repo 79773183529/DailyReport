@@ -19,8 +19,9 @@ class FSMFillForm(StatesGroup):
 
 
 # Этот хэндлер срабатывает на команду /plan_to_excel
-@router.message(Command(commands='plan_to_excel'), StateFilter(default_state))
+@router.message(Command(commands='create_plan'), StateFilter(default_state))
 async def process_report_command(message: Message, state: FSMContext, bot: Bot):
+    print("def process_report_command$$$handlers")
     if message.from_user.id not in ADMINS:
         await message.answer(text=lexicon_ru.Approve.not_admin)
     else:

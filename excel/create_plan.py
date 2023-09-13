@@ -4,6 +4,7 @@ from entities.task import Contractor
 
 
 def create_plan(filename, task_list):
+    print("def create_plan.excel")
     dt = datetime.datetime.now().strftime("%Y-%m-%d")
     filename_copy = filename[:-5] + '_' + dt + '.xlsx'
 

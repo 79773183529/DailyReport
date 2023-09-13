@@ -22,7 +22,7 @@ dp: Dispatcher = Dispatcher()
 
 # Добавляем задачу в планировщик
 def schedule_jobs():
-    scheduler.add_job(send_message_in_time, "interval", minutes=0, seconds=5)
+    scheduler.add_job(send_message_in_time, "interval", minutes=10, seconds=5)
     scheduler.add_job(send_message_to_planners_in_time, "interval", minutes=10, seconds=5)
 
 
